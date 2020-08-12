@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="db05082020" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-0QCO4T2;Initial Catalog=db05082020;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="db05082020ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Mesaj" Member="Mesajs">
+    <Type Name="Mesaj">
+      <Column Name="iKodMesaj" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="iKodMesajTipi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cMesaj" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="iAktifMi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MesajTipi" Member="MesajTipis">
+    <Type Name="MesajTipi">
+      <Column Name="iKodMesajTipi" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cAdi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="cSeo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="iAktifMi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

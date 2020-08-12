@@ -1,0 +1,120 @@
+﻿html body {
+  background-image: url(/Images/papatya.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed !important;
+  background-color: #bdd9e5;
+}
+html body .listele .container {
+  padding: 3rem;
+}
+html body .listele .container a h1 {
+  font-size: 90px;
+}
+html body .listele .container .row .col-xl-3 .border {
+  border-radius: 30px;
+}
+html body .listele .container .row .col-xl-3 .border .list-group {
+  border-radius: 30px;
+  background-color: #efedf2 !important;
+}
+html body .listele .container .row .col-xl-3 .border .list-group a {
+  border-color: #ffa200 !important;
+}
+html body .listele .container .row .col-xl-3 .border .list-group a:hover {
+  background-color: #efedf2 !important;
+}
+html body .listele .container .row .col-xl-9 .arama form .form-group .input-group input {
+  border-radius: 30px;
+  border: 3px solid #ffa200 !important;
+  opacity: 0.6 !important;
+}
+html body .listele .container .row .col-xl-9 .arama form .form-group .input-group span button {
+  border-radius: 30px;
+  background-color: #ffa200 !important;
+}
+html body .listele .container .row .col-xl-9 .card {
+  border-radius: 30px;
+  background-color: #efedf2 !important;
+}
+html body .listele .container .row .col-xl-9 .card .copyButton1 {
+  border-radius: 30px !important;
+  background-color: #ffa200 !important;
+  color: #efedf2 !important;
+  border: 0 !important;
+  width: 110px !important;
+  height: 30px !important;
+}
+html body .listele .container .row .col-xl-9 .alt-etiketler {
+  margin-top: 35px;
+}
+html body .listele .container .row .col-xl-9 .alt-etiketler a span {
+  background-color: #ffa200;
+}
+html body .listele .container .pagination-container .pagination {
+  justify-content: center;
+  text-align: center;
+  height: 70px;
+  margin-top: 45px;
+  margin-bottom: 0px;
+  border-radius: 17px;
+  color: #e4d8ca;
+}
+html body .listele .container .pagination-container .pagination .active {
+  opacity: 0.5;
+}
+html body .listele .container .pagination-container .pagination a,
+html body .listele .container .pagination-container .pagination span {
+  color: white;
+  text-decoration: none;
+  background-color: #ffa200;
+  border-radius: 17px;
+  transition: 0.8s;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: 44px;
+  margin-left: 2px;
+  width: 45px;
+  height: 45px;
+  display: block;
+}
+html body .listele .container .pagination-container .pagination a:hover {
+  background-color: #ffffff;
+  color: #ffa200;
+  opacity: 0.8;
+  transition: 0.8s;
+}
+html body .listele .text-center.mt-5 {
+  font-size: 23px !important;
+}
+@media (max-width: 768px) {
+  html body .listele .container {
+    padding: 2rem !important;
+  }
+  html body .listele .container a h1 {
+    font-size: 50px;
+  }
+  html body .listele .container .row .col-xl-3 .border .list-group a {
+    font-size: 12px;
+  }
+}
+@media (max-width: 576px) {
+  html body .listele .container a h1 {
+    font-size: 40px;
+  }
+  html body .listele .container .row .col-xl-9 .arama form .form-group .input-group {
+    margin-top: 30px;
+  }
+}
+@media (max-width: 440px) {
+  html body .listele .container a h1 {
+    font-size: 30px;
+  }
+}
+@media (max-width: 350px) {
+  html body .listele .container a h1 {
+    font-size: 24px;
+  }
+}

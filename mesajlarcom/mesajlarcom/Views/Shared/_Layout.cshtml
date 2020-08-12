@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.cTitle - Mesajlar</title>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="keywords" content="@ViewBag.cKeywords">
+    <meta name="description" content="@ViewBag.cDescription">
+    <meta name="abstract" content="@ViewBag.cDescription">
+    <meta name="twitter:description" content="@ViewBag.cDescription">
+    <meta property="og:description" content="@ViewBag.cDescription">
+    <meta itemprop="description" content="@ViewBag.cDescription">
+    <link href="~/Content/index.min.css" rel="stylesheet" />
+    <link href="~/Content/animate.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/hover-min.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <meta name="language" content="Turkish">
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-173915857-1');
+    </script>
+</head>
+<body>
+    @RenderBody()
+    <script src="~/Scripts/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="~/Scripts/Kopyabtn.js"></script>
+</body>
+</html>

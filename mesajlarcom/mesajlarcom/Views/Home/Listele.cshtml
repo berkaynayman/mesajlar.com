@@ -1,0 +1,117 @@
+﻿@using X.PagedList
+@using X.PagedList.Mvc
+@model ozelgunmesajlaricom.Models.Listele
+
+@{
+    var parametreler = new RouteValueDictionary();
+    parametreler.Add("arama", ViewBag.cArama);
+    if (Model != null)
+    {
+        ViewBag.cTitle = Model.cBaslik;
+    }
+    if (!string.IsNullOrEmpty(ViewBag.cArama))
+    {
+        ViewBag.cTitle = ViewBag.cArama + " Araması Sonucu";
+    }
+    ViewBag.cKeywords = "anlamlı ve etkileyici güzel sözler,özel gün mesajları,anneler günü mesajları,babalar günü mesajları,berat kandili mesajları,cuma mesajları,kadınlar günü mesajları" +
+    "kurban bayramı mesajları,mevlid kandili mesajları,ramazan bayramı mesajları,regaip kandili mesajları,sevgililer günü mesajları,şeker bayramı mesajları,kandi";
+    ViewBag.cDescription = "Özel günlerde ve din'i bayramlarda sevdiklerinize en güzel duyguları zengin içeriği ile aktarabileceğiniz adres.";
+}
+
+
+@if (Model != null)
+{
+    <html>
+    <body>
+        <section class="listele">
+            <div class="container">
+                <a href="/home/listele" title="Ana Sayfa" class="text-decoration-none">
+                    <h1 class="text-center text-dark font-weight-bold mb-5">ozelgunmesajlari.com</h1>
+                </a>
+                <div class="row">
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
+                        <div class="border border-left-0" id="sidebar-wrapper">
+                            @if (Model.menus != null && Model.menus.Count > 0)
+                            {
+                                <div class="list-group">
+                                    <a href="/home/listele" title="/home/listele" class="list-group-item list-group-item-action border-left-0 border-top-0 border-right-0 bg-transparent hvr-forward">
+                                        Tüm Mesajlar
+                                    </a>
+                                    @for (int i = 0; i < Model.menus.Count; i++)
+                                    {
+                                        if (!string.IsNullOrEmpty(Model.menus[i].cAdi))
+                                        {
+                                            <a href="/@Model.menus[i].cSeo" title="/@Model.menus[i].cAdi" class="list-group-item list-group-item-action border-left-0 border-top-0 border-right-0 bg-transparent hvr-forward">
+                                                @Model.menus[i].cAdi
+                                            </a>
+                                        }
+                                    }
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div class="col-xl-9 col-lg-9 col-md-8 col-sm-8">
+                        <div class="arama mb-1">
+                            <form action="/home/listele" method="get">
+                                <div class="form-group mb-0">
+                                    <div class="input-group">
+                                        <input id="1" class="form-control" type="text" name="arama" placeholder="Aramak istediğin mesajı gir.." required />
+                                        <span class="input-group-btn">
+                                            <button class="btn font-weight-bold ml-1 px-4" type="submit">
+                                                <i aria-hidden="true"></i> ARA
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        @if (!string.IsNullOrEmpty(Model.cBaslik))
+                        {
+                            <h3 class="text-left font-weight-bold text-capitalize py-4">@ViewBag.cTitle</h3>
+                        }
+                        @if (Model.mesajs != null && Model.mesajs.Count > 0)
+                        {
+                            for (int i = 0; i < Model.mesajs.Count; i++)
+                            {
+                                <div class="card bg-light shadow-lg p-3 mb-4">
+                                    @if (!String.IsNullOrEmpty(Model.mesajs[i].cMesaj))
+                                    {
+                                        <p class="card-text">
+                                            @Model.mesajs[i].cMesaj
+                                        </p>
+                                    }
+                                    <button class="copyButton1">
+                                        <i class="fa fa-clipboard" aria-hidden="true"></i>
+                                        Kopyala
+                                    </button>
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <div class="alert bg-white text-center font-weight-bold">İlgili bir mesaj bulunamadı!</div>
+                        }
+                        <div class="alt-etiketler">
+                            @if (Model.menus != null && Model.menus.Count > 0)
+                            {
+                                for (int i = 0; i < Model.menus.Count; i++)
+                                {
+                                    if (!string.IsNullOrEmpty(Model.menus[i].cSeo))
+                                    {
+                                        <a href="/@Model.menus[i].cSeo" title="/@Model.menus[i].cSeo" class="text-decoration-none mt-5">
+                                            <span class="badge badge-pill badge-light text-capitalize mb-2">@Model.menus[i].cAdi</span>
+                                        </a>
+                                    }
+                                }
+                            }
+                        </div>
+                    </div>                    
+                </div>
+                @Html.PagedListPager((IPagedList)Model.mesajs, sayfa => Url.Action("listele", "home", ozelgunmesajlaricom.Class.Parametre.Send(sayfa, parametreler)), X.PagedList.Mvc.PagedListRenderOptions.PageNumbersOnly)
+                <p class="text-center mt-5">©  @DateTime.Now.Year | <span class="font-weight-bold">ozelgunmesajlari.com</span></p>
+            </div>
+        </section>
+    </body>
+</html>
+}
+
